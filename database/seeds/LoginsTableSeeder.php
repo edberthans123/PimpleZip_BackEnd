@@ -30,7 +30,7 @@ class LoginsTableSeeder extends Seeder
       }
 
       foreach(range(11,20)as $index){
-          DB::table('Logins')->insert([
+          DB::table('logins')->insert([
             'id' => $index,
             'email' => $faker->email,
             'password' => Hash::make('password'),
@@ -41,7 +41,7 @@ class LoginsTableSeeder extends Seeder
       }
 
       foreach(range(21,30)as $index){
-          DB::table('Logins')->insert([
+          DB::table('logins')->insert([
             'id' => $index,
             'email' => $faker->email,
             'password' => Hash::make('password'),
