@@ -24,7 +24,7 @@ class FeedbacksTableSeeder extends Seeder
         $consultantid = Consultant::all()->pluck('id')->toArray();
         $count = 0;
         foreach(range(1,10)as $index){
-          DB::table('Feedback')->insert([
+          DB::table('feedback')->insert([
             'id' => $index,
             'user_id' => $userid[$count],
             'consultant_id' => $consultantid[$count],

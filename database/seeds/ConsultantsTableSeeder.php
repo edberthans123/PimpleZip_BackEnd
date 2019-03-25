@@ -19,7 +19,7 @@ class ConsultantsTableSeeder extends Seeder
         $consultantid = Login::all()->where('role_id',$role[0])->pluck('id')->toArray();
         $count = 0;
         foreach(range(1,10)as $index){
-          DB::table('Consultants')->insert([
+          DB::table('consultants')->insert([
             'id' => $index,
             'name' => $faker->name,
             'date_of_birth' => $faker->date,

@@ -20,7 +20,7 @@ class RolesTableSeeder extends Seeder
         ];
 
         foreach(range(1,3)as $index){
-          DB::table('Roles')->insert([
+          DB::table('roles')->insert([
             'id'=> $index,
             'rolename' => $contents[$index-1],
             'created_at' => date("Y-m-d H:i:s"),

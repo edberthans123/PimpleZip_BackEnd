@@ -19,7 +19,7 @@ class LoginsTableSeeder extends Seeder
       $admin = Role::all()->where('rolename','Admin')->pluck('id')->toArray();
 
       foreach(range(1,10)as $index){
-        DB::table('Logins')->insert([
+        DB::table('logins')->insert([
           'id' => $index,
           'email' => $faker->email,
           'password' => Hash::make('password'),

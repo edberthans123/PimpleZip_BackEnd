@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
       $userid = Login::all()->where('role_id','2')->pluck('id')->toArray();
       $count = 0;
       foreach(range(1,10)as $index){
-        DB::table('Users')->insert([
+        DB::table('users')->insert([
           'id' => $index,
           'name' => $faker->name,
           'date_of_birth' => $faker->date,
