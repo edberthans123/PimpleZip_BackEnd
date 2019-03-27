@@ -44,7 +44,7 @@ class LoginController extends Controller
       ]);
       $login = new Login([
         'email' => $data['email'],
-        'password' => $data['password'],
+        'password' => Hash::make($data['password']),
         'role_id' => $data['role_id']
       ]);
       $login -> save();
