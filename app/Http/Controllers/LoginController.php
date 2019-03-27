@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\login;
+use App\Login;
 use Illuminate\Http\Request;
+use Hash;
 
 class LoginController extends Controller
 {
