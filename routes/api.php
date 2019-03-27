@@ -30,12 +30,19 @@ Route::group([
       Route::post('logout', 'AuthController@logout');
       Route::post('refresh', 'AuthController@refresh');
       Route::post('me', 'AuthController@user');
+
     });
 
 
 
 });
 
-Route::group(['middleware' => 'auth:api'], function(){
-  Route::resource('feedback', 'FeedbackController');
-});
+Route::apiResource('role', 'RoleController');
+
+Route::apiResource('consultant', 'ConsultantController');
+
+Route::apiResource('login', 'LoginController');
+
+Route::apiResource('user', 'UserController');
+
+Route::apiResource('feedbacks', 'FeedbackController');

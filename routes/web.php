@@ -19,15 +19,15 @@ Route::get('/services', 'PagesController@services');
 
 Route::get('/login', 'PagesController@login');
 
-Route::apiResource('role', 'RoleController');
-
-Route::apiResource('consultant', 'ConsultantController');
-
-Route::apiResource('login', 'LoginController');
-
-Route::apiResource('user', 'UserController');
-
-Route::apiResource('feedbacks', 'FeedbackController');
+// Route::apiResource('role', 'RoleController');
+//
+// Route::apiResource('consultant', 'ConsultantController');
+//
+// Route::apiResource('login', 'LoginController');
+//
+// Route::apiResource('user', 'UserController');
+//
+// Route::apiResource('feedbacks', 'FeedbackController');
 
 /*
 Route::get('/users/{id}/{name}', function ($id,$name) {
