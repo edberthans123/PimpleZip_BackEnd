@@ -51,14 +51,12 @@ class LoginController extends Controller
         'gender'=>'required|string|max:6',
         'address'=>'required|string|max:255',
         'phone'=>'required|string|max:255'
-        //'picture'=> 'mimes:jpeg,png'
       ]);
       $login = new Login([
         'email' => $data['email'],
         'password' => Hash::make($data['password']),
         'role_id' => 2
       ]);
-      //$path = Storage::putFile('public/ProfilePicture', $request->file('picture') );
       $login -> save();
       $user = new User([
         'name' => $request->name,
@@ -67,7 +65,6 @@ class LoginController extends Controller
         'address' => $request->address,
         'phone' => $request->phone,
         'login_id' => $login->id
-        //'picture'=> $path
       ]);
 
       $user -> save();
