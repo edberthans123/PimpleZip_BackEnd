@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
           ConsultantsTableSeeder::class,
           UsersTableSeeder::class,
           FeedbacksTableSeeder::class
-        ]);
+        ]); //calling this class would seed instantly all the called class above
     }
 }

@@ -55,7 +55,7 @@ class LoginController extends Controller
       $login = new Login([
         'email' => $data['email'],
         'password' => Hash::make($data['password']),
-        'role_id' => 2
+        'role_id' => 2 //user's roleid
       ]);
       $login -> save();
       $user = new User([
@@ -64,7 +64,7 @@ class LoginController extends Controller
         'gender' => $request->gender,
         'address' => $request->address,
         'phone' => $request->phone,
-        'login_id' => $login->id
+        'login_id' => $login->id //foreign key for login id
       ]);
 
       $user -> save();

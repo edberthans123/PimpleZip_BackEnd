@@ -26,6 +26,6 @@ class RolesTableSeeder extends Seeder
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
           ]);
-        }
+        } //seeding all the roles inside the roles table
     }
 }

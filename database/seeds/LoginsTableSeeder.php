@@ -26,7 +26,7 @@ class LoginsTableSeeder extends Seeder
           'role_id' => $user[0],
           'created_at' => date("Y-m-d H:i:s"),
           'updated_at' => date("Y-m-d H:i:s")
-        ]);
+        ]); //making 10 dummy user data with password "walamak"
       }
 
       foreach(range(11,20)as $index){
@@ -37,7 +37,7 @@ class LoginsTableSeeder extends Seeder
             'role_id' => $consultant[0],
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
-          ]);
+          ]); //making 10 dummy consultants data with password "walamak"
       }
 
       foreach(range(21,30)as $index){
@@ -48,7 +48,7 @@ class LoginsTableSeeder extends Seeder
             'role_id' => $admin[0],
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
-          ]);
+          ]); //making 10 dummy admin data with password "walamak"
       }
 
 }

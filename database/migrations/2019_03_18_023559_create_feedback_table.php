@@ -14,11 +14,11 @@ class CreateFeedbackTable extends Migration
     public function up()
     {
         Schema::create('feedback', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id'); //primary key
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->unsignedBigInteger('consultant_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('consultant_id')->references('id')->on('consultants');
+            $table->foreign('user_id')->references('id')->on('users'); //foreign key in users table
+            $table->foreign('consultant_id')->references('id')->on('consultants'); //foreign key in consultants table
             $table->string('message');
             $table->integer('rating');
             $table->timestamps();

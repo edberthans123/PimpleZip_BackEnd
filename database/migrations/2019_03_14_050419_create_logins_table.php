@@ -13,14 +13,15 @@ class CreateLoginsTable extends Migration
      */
     public function up()
     {
-      Schema::create('logins', function (Blueprint $table) {
-      $table->bigIncrements('id');
+      Schema::create('logins', function (Blueprint $table){
+      $table->bigIncrements('id'); //primary key
       $table->string('email')->unique();
       $table->string('password');
       $table->unsignedBigInteger('role_id');
-      $table->foreign('role_id')->references('id')->on('roles');
+      $table->foreign('role_id')->references('id')->on('roles'); //taking the roleid in the roles table as  foreign key
       $table->timestamps();
-        });
+      });
+
     }
 
     /**

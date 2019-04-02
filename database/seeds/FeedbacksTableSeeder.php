@@ -32,7 +32,7 @@ class FeedbacksTableSeeder extends Seeder
             'rating' => $faker->randomDigit,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
-          ]);
+          ]); //seeding fake random text inside the feedbacks table
           $count++;
         }
     }

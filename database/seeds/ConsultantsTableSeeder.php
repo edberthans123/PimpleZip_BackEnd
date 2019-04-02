@@ -32,7 +32,7 @@ class ConsultantsTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s")
           ]);
           $count ++;
-        }
+        } //dummy datas for consultants table
 
     }
 }

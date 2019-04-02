@@ -25,7 +25,7 @@ Route::group([
 ], function ($router) {
 
       Route::post('login', 'AuthController@login');
--
+
       Route::group(['middleware' => ['auth:api']], function(){
       Route::post('logout', 'AuthController@logout');
       Route::post('refresh', 'AuthController@refresh');
@@ -34,9 +34,10 @@ Route::group([
     });
 
 
-
+//end of grouping
 });
 
+//api for the tables
 Route::apiResource('role', 'RoleController');
 
 Route::apiResource('consultant', 'ConsultantController');

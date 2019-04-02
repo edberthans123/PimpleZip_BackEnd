@@ -14,15 +14,15 @@ class CreateConsultantsTable extends Migration
     public function up()
     {
       Schema::create('consultants', function (Blueprint $table) {
-          $table->bigIncrements('id');
+          $table->bigIncrements('id'); //primary key
           $table->string('name');
           $table->string('date_of_birth');
           $table->string('gender');
           $table->string('address');
           $table->string('phone');
-          $table->string('picture')->default("public/uploads/ProfilePicture/default.png");
+          $table->string('picture')->default("public/uploads/ProfilePicture/default.png"); //not required
           $table->unsignedBigInteger('login_id');
-          $table->foreign('login_id')->references('id')->on('logins');
+          $table->foreign('login_id')->references('id')->on('logins'); //login id from logins table
           $table->timestamps();
       });
     }
