@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Login;
+use JWTAuth;
+use Auth;
+use Uuid;
 use Illuminate\Http\Request;
 use Hash;
+use Storage;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -39,24 +44,45 @@ class LoginController extends Controller
     {
       $data = $request->json()->all();
       $request->validate([
-        'email' => 'required|string|max:255',
+        'email' => 'required|string|max:255|unique:logins',
         'password' => 'required|string|max:255',
-        'role_id' => 'required|exists:roles,id'
+        'name' => 'required|string|max:255',
+        'date_of_birth'=>'required|date_format:"Y-m-d"',
+        'gender'=>'required|string|max:6',
+        'address'=>'required|string|max:255',
+        'phone'=>'required|string|max:255'
+        //'picture'=> 'mimes:jpeg,png'
       ]);
       $login = new Login([
         'email' => $data['email'],
         'password' => Hash::make($data['password']),
-        'role_id' => $data['role_id']
+        'role_id' => 2
       ]);
+      //$path = Storage::putFile('public/ProfilePicture', $request->file('picture') );
       $login -> save();
-      return response()->json($login);
+      $user = new User([
+        'name' => $request->name,
+        'date_of_birth' => $request->date_of_birth,
+        'gender' => $request->gender,
+        'address' => $request->address,
+        'phone' => $request->phone,
+        'login_id' => $login->id
+        //'picture'=> $path
+      ]);
+
+      $user -> save();
+      return response()->json([
+          'login' => $login,
+          'user' => $user
+      ]);
+
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\login  $login
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responsex
      */
     public function show(login $login)
     {

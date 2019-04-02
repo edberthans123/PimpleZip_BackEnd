@@ -22,7 +22,7 @@ class LoginsTableSeeder extends Seeder
         DB::table('logins')->insert([
           'id' => $index,
           'email' => $faker->email,
-          'password' => Hash::make('password'),
+          'password' => Hash::make('walamak'),
           'role_id' => $user[0],
           'created_at' => date("Y-m-d H:i:s"),
           'updated_at' => date("Y-m-d H:i:s")
@@ -33,7 +33,7 @@ class LoginsTableSeeder extends Seeder
           DB::table('logins')->insert([
             'id' => $index,
             'email' => $faker->email,
-            'password' => Hash::make('password'),
+            'password' => Hash::make('walamak'),
             'role_id' => $consultant[0],
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -44,7 +44,7 @@ class LoginsTableSeeder extends Seeder
           DB::table('logins')->insert([
             'id' => $index,
             'email' => $faker->email,
-            'password' => Hash::make('password'),
+            'password' => Hash::make('walamak'),
             'role_id' => $admin[0],
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
