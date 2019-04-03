@@ -1,3 +1,9 @@
+## About Our Final Project
+Our final project is about making people interact with consultants all over the world to help people that has problem
+with their pimple. PimpleZip.com helps people to be able to consult with doctors using an online platform with the live chat
+system that we provide in our system
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
