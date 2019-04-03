@@ -3,6 +3,8 @@ Our final project is about making people interact with consultants all over the 
 with their pimple. PimpleZip.com helps people to be able to consult with doctors using an online platform with the live chat
 system that we provide in our system
 
+This is the backend repository for PimpleZip and im using laravel as my framework
+
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
